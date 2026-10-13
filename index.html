@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>UFL Season 2 | United Football League</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+  <!-- ICONS -->
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="m3 10 9-7 9 7v10h-6v-7H9v7H3z"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24">
+      <path d="M8 3h8v8a4 4 0 0 1-8 0zM8 5H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 15v4m-4 2h8"/>
+    </symbol>
+    <symbol id="i-scores" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="2"/>
+      <path d="M12 5v14M6 10h3m-3 4h3m6-4h3m-3 4h3"/>
+    </symbol>
+    <symbol id="i-stats" viewBox="0 0 24 24">
+      <path d="M3 21V10m6 11V4m6 17v-9m6 9V7M2 21h20"/>
+    </symbol>
+    <symbol id="i-more" viewBox="0 0 24 24">
+      <circle cx="5" cy="12" r="1.5"/>
+      <circle cx="12" cy="12" r="1.5"/>
+      <circle cx="19" cy="12" r="1.5"/>
+    </symbol>
+  </svg>
+
+  <!-- FLOATING TOP HEADER -->
+  <header class="site-header">
+    <button id="themeToggle" class="theme-button" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z"/>
+      </svg>
+    </button>
+
+    <div class="header-right">
+      <button id="notificationButton" class="notification-button" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>
+        </svg>
+        <span id="notificationCount" class="notification-count" hidden>0</span>
+      </button>
+
+      <button id="discordLogin" class="profile-button" aria-label="Sign in with Discord">
+        <img id="discordAvatar" alt="Discord profile" hidden>
+        <span id="avatarFallback">U</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- AROUND THE LEAGUE -->
+    <section class="panel around-panel">
+      <h2 class="small-heading">around the league</h2>
+
+      <div class="feature-list">
+        <a class="feature-card feature-purple" href="more.html">
+          <span class="feature-kicker">UFL SEASON 2</span>
+          <h3>Road to the Championship</h3>
+          <p>Eight teams. One champion. Follow the playoff race.</p>
+          <strong>Explore the league &rarr;</strong>
+        </a>
+
+        <a class="feature-card feature-red" href="standings.html">
+          <span class="feature-kicker">THE PLAYOFF RACE</span>
+          <h3>Who takes the crown?</h3>
+          <p>Track conference leaders and the road to the UFL championship.</p>
+          <strong>View standings &rarr;</strong>
+        </a>
+      </div>
+
+      <div class="quick-links">
+        <a href="rankings.html" class="quick-link">
+          <span class="quick-icon">01</span>
+          <span class="quick-copy">
+            <strong>UFL Power Rankings</strong>
+            <small>See who's on top this season.</small>
+          </span>
+          <span class="quick-arrow">&rarr;</span>
+        </a>
+
+        <a href="scores.html" class="quick-link">
+          <span class="quick-icon">02</span>
+          <span class="quick-copy">
+            <strong>Latest Game Results</strong>
+            <small>Scores from around the league.</small>
+          </span>
+          <span class="quick-arrow">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- PLAYER OF THE SERIES -->
+    <section class="player-section">
+      <div class="section-heading-inline">
+        <h2>player of the series</h2>
+        <span>season 2 race</span>
+      </div>
+
+      <div class="series-card afc-series">
+        <div class="series-logo">A</div>
+        <div class="series-details">
+          <span class="series-conference">AMERICAN CONFERENCE</span>
+          <h3 id="afcSeriesPlayer">Series leader pending</h3>
+          <p id="afcSeriesTeam">Awaiting series point totals</p>
+          <div id="afcSeriesStats" class="series-stats">Season 2</div>
+          <div id="afcSeriesRunners" class="series-runners">Official scoring to be configured</div>
+        </div>
+        <div class="series-points">
+          <strong id="afcSeriesPoints">—</strong>
+          <small>PTS</small>
+        </div>
+      </div>
+
+      <div class="series-card nfc-series">
+        <div class="series-logo">N</div>
+        <div class="series-details">
+          <span class="series-conference">NATIONAL CONFERENCE</span>
+          <h3 id="nfcSeriesPlayer">Series leader pending</h3>
+          <p id="nfcSeriesTeam">Awaiting series point totals</p>
+          <div id="nfcSeriesStats" class="series-stats">Season 2</div>
+          <div id="nfcSeriesRunners" class="series-runners">Official scoring to be configured</div>
+        </div>
+        <div class="series-points">
+          <strong id="nfcSeriesPoints">—</strong>
+          <small>PTS</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST CLIPS -->
+    <section class="clips-section">
+      <div class="section-heading-inline">
+        <h2>latest clips</h2>
+        <a href="more.html">View all &rarr;</a>
+      </div>
+
+      <div id="latestClips" class="clips-track">
+        <div class="clip-card">
+          <div class="clip-placeholder">UFL</div>
+          <strong>League Highlights</strong>
+          <small>Videos coming soon</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARD WATCH -->
+    <section class="panel award-panel">
+      <div class="award-heading">
+        <h2>AWARD WATCH</h2>
+        <span>LIVE RACE</span>
+      </div>
+
+      <div class="award-controls">
+        <select id="awardSelect" aria-label="Select award">
+          <option value="mvp">MVP — Most Valuable Player</option>
+          <option value="opoy">Offensive Player of the Year</option>
+          <option value="dpoy">Defensive Player of the Year</option>
+          <option value="qb">Quarterback of the Year</option>
+          <option value="wr">Receiver of the Year</option>
+        </select>
+        <a href="stats.html" class="tracker-link">full tracker &rarr;</a>
+      </div>
+
+      <div class="award-divider"></div>
+      <div id="awardList" class="award-list">
+        <p class="loading-message">Award rankings coming soon</p>
+      </div>
+    </section>
+
+    <!-- MATCHUPS -->
+    <section class="panel matchup-panel">
+      <div class="panel-heading">
+        <h2>MATCHUPS</h2>
+        <span class="red-pill" id="matchupWeekLabel">WEEK 4</span>
+        <span class="red-pill" id="matchupStatus">SCHEDULED</span>
+      </div>
+
+      <div class="panel-controls">
+        <select id="weekSelect" aria-label="Choose week">
+          <option value="1">Week 1</option>
+          <option value="2">Week 2</option>
+          <option value="3">Week 3</option>
+          <option value="4" selected>Week 4</option>
+        </select>
+        <a href="scores.html" class="control-link">all scores &rarr;</a>
+      </div>
+
+      <div class="red-line"></div>
+
+      <div id="matchupsList" class="matchup-list">
+        <p class="loading-message">Loading UFL matchups...</p>
+      </div>
+    </section>
+
+    <!-- STAT LEADERS -->
+    <section class="panel stats-panel">
+      <div class="panel-heading spread">
+        <h2>STAT LEADERS</h2>
+        <select id="statSelect" aria-label="Choose stat category">
+          <option value="pass_yards">Passing Yards</option>
+          <option value="pass_touchdowns">Passing TDs</option>
+          <option value="rush_yards">Rushing Yards</option>
+          <option value="rush_touchdowns">Rushing TDs</option>
+          <option value="receiving_yards">Receiving Yards</option>
+          <option value="receiving_touchdowns">Receiving TDs</option>
+          <option value="tackles">Tackles</option>
+          <option value="defensive_interceptions">Interceptions</option>
+          <option value="sacks">Sacks</option>
+        </select>
+      </div>
+
+      <div class="red-line"></div>
+
+      <div id="statLeaders" class="leader-list">
+        <p class="loading-message">Loading player stats...</p>
+      </div>
+
+      <a href="stats.html" class="view-all-link">VIEW ALL STATS &rarr;</a>
+    </section>
+
+    <!-- STANDINGS -->
+    <section class="panel standings-panel">
+      <div class="panel-heading spread">
+        <h2>STANDINGS</h2>
+        <select id="conferenceSelect" aria-label="Choose conference">
+          <option value="AFC">AFC</option>
+          <option value="NFC">NFC</option>
+        </select>
+      </div>
+
+      <div class="red-line"></div>
+
+      <div id="standingsList" class="standings-list">
+        <p class="loading-message">Loading standings...</p>
+      </div>
+
+      <a href="standings.html" class="view-all-link">FULL STANDINGS &rarr;</a>
+    </section>
+
+    <footer class="site-footer">
+      <strong>UFL</strong>
+      <p>UNITED FOOTBALL LEAGUE · SEASON 2</p>
+      <small>Built for the UFL community</small>
+    </footer>
+  </main>
+
+  <!-- FLOATING BOTTOM NAV -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-item active" aria-current="page">
+      <svg><use href="#i-home"/></svg>
+      <span>Home</span>
+    </a>
+
+    <a href="standings.html" class="nav-item">
+      <svg><use href="#i-trophy"/></svg>
+      <span>Standings</span>
+    </a>
+
+    <a href="scores.html" class="nav-item">
+      <svg><use href="#i-scores"/></svg>
+      <span>Scores</span>
+    </a>
+
+    <a href="stats.html" class="nav-item">
+      <svg><use href="#i-stats"/></svg>
+      <span>Stats</span>
+    </a>
+
+    <a href="more.html" class="nav-item">
+      <svg><use href="#i-more"/></svg>
+      <span>More</span>
+    </a>
+  </nav>
+</body>
+</html>
