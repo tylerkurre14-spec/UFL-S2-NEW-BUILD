@@ -13,12 +13,7 @@
   <title>UFL Season 2</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -37,7 +32,7 @@
 
 <body>
 
-  <!-- ICON LIBRARY -->
+  <!-- ICONS -->
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg">
 
     <symbol id="i-home" viewBox="0 0 24 24">
@@ -66,7 +61,7 @@
   </svg>
 
 
-  <!-- TOP -->
+  <!-- TOP HEADER -->
   <header class="site-header">
 
     <button
@@ -90,6 +85,7 @@
       <button
         id="notificationButton"
         class="notification-button"
+        aria-label="Notifications"
       >
         <svg
           viewBox="0 0 24 24"
@@ -112,6 +108,7 @@
       <button
         id="discordLogin"
         class="profile-button"
+        aria-label="Discord profile"
       >
         <img
           id="discordAvatar"
@@ -201,7 +198,9 @@
             <small>See who's on top this season.</small>
           </span>
 
-          <span class="quick-arrow">→</span>
+          <span class="quick-arrow">
+            →
+          </span>
 
         </a>
 
@@ -217,7 +216,9 @@
             <small>Scores from around the league.</small>
           </span>
 
-          <span class="quick-arrow">→</span>
+          <span class="quick-arrow">
+            →
+          </span>
 
         </a>
 
@@ -242,17 +243,20 @@
       </div>
 
 
-      <!-- AFC -->
+      <!-- AFC CARD -->
       <article
         class="series-card afc-series"
         id="afcSeriesCard"
       >
 
-        <!-- REAL AFC LOGO -->
         <div class="conference-side">
 
+          <!--
+            AFC IMAGE
+            File is in the SAME folder as index.html
+          -->
           <img
-            src="assets/afc.png.PNG"
+            src="./afc.png.PNG"
             class="conference-image"
             alt="AFC"
           >
@@ -264,7 +268,6 @@
 
           <div class="series-player-row">
 
-            <!-- TEAM LOGO -->
             <div
               class="series-team-circle"
               id="afcLeaderTeamLogo"
@@ -275,7 +278,6 @@
 
             <div class="series-player-copy">
 
-              <!-- ROBLOX USERNAME -->
               <a
                 id="afcSeriesPlayer"
                 class="series-player-name"
@@ -285,7 +287,6 @@
               </a>
 
 
-              <!-- TEAM + GP -->
               <div
                 id="afcSeriesTeam"
                 class="series-player-team"
@@ -298,7 +299,6 @@
           </div>
 
 
-          <!-- MAIN STATS -->
           <div
             id="afcSeriesStats"
             class="series-main-stats"
@@ -310,7 +310,6 @@
           <div class="series-divider"></div>
 
 
-          <!-- #2 AND #3 -->
           <div
             id="afcSeriesRunners"
             class="series-runners"
@@ -321,7 +320,6 @@
         </div>
 
 
-        <!-- POINTS -->
         <div class="series-score">
 
           <strong id="afcSeriesPoints">
@@ -337,17 +335,20 @@
       </article>
 
 
-      <!-- NFC -->
+      <!-- NFC CARD -->
       <article
         class="series-card nfc-series"
         id="nfcSeriesCard"
       >
 
-        <!-- REAL NFC LOGO -->
         <div class="conference-side">
 
+          <!--
+            NFC IMAGE
+            File is in the SAME folder as index.html
+          -->
           <img
-            src="assets/nfc.png.PNG"
+            src="./nfc.png.PNG"
             class="conference-image"
             alt="NFC"
           >
@@ -359,7 +360,6 @@
 
           <div class="series-player-row">
 
-            <!-- TEAM LOGO -->
             <div
               class="series-team-circle"
               id="nfcLeaderTeamLogo"
@@ -370,7 +370,6 @@
 
             <div class="series-player-copy">
 
-              <!-- ROBLOX USERNAME -->
               <a
                 id="nfcSeriesPlayer"
                 class="series-player-name"
@@ -380,7 +379,6 @@
               </a>
 
 
-              <!-- TEAM + GP -->
               <div
                 id="nfcSeriesTeam"
                 class="series-player-team"
@@ -393,7 +391,6 @@
           </div>
 
 
-          <!-- MAIN STATS -->
           <div
             id="nfcSeriesStats"
             class="series-main-stats"
@@ -405,7 +402,6 @@
           <div class="series-divider"></div>
 
 
-          <!-- #2 AND #3 -->
           <div
             id="nfcSeriesRunners"
             class="series-runners"
@@ -416,7 +412,6 @@
         </div>
 
 
-        <!-- POINTS -->
         <div class="series-score">
 
           <strong id="nfcSeriesPoints">
@@ -527,6 +522,7 @@
 
 
       <div class="award-divider"></div>
+
 
       <div
         id="awardList"
@@ -725,7 +721,9 @@
         <use href="#i-home"/>
       </svg>
 
-      <span>Home</span>
+      <span>
+        Home
+      </span>
     </a>
 
 
@@ -737,7 +735,9 @@
         <use href="#i-trophy"/>
       </svg>
 
-      <span>Standings</span>
+      <span>
+        Standings
+      </span>
     </a>
 
 
@@ -749,7 +749,9 @@
         <use href="#i-scores"/>
       </svg>
 
-      <span>Scores</span>
+      <span>
+        Scores
+      </span>
     </a>
 
 
@@ -761,7 +763,9 @@
         <use href="#i-stats"/>
       </svg>
 
-      <span>Stats</span>
+      <span>
+        Stats
+      </span>
     </a>
 
 
@@ -773,7 +777,9 @@
         <use href="#i-more"/>
       </svg>
 
-      <span>More</span>
+      <span>
+        More
+      </span>
     </a>
 
   </nav>
