@@ -59,7 +59,7 @@ body.dark-mode {
 }
 
 
-/* TOP FLOATING CONTROLS */
+/* HEADER */
 
 .site-header {
   position: fixed;
@@ -184,6 +184,7 @@ body.dark-mode {
 .profile-button img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
@@ -200,7 +201,7 @@ body.dark-mode {
 }
 
 
-/* BASIC PANELS */
+/* PANELS */
 
 .panel {
   margin-bottom: 30px;
@@ -223,7 +224,7 @@ body.dark-mode {
 }
 
 
-/* AROUND THE LEAGUE */
+/* AROUND LEAGUE */
 
 .feature-list {
   display: grid;
@@ -369,7 +370,7 @@ body.dark-mode {
 }
 
 
-/* SECTION TITLES */
+/* SECTION HEADINGS */
 
 .player-section,
 .clips-section {
@@ -404,29 +405,30 @@ body.dark-mode {
 }
 
 
-/* ==========================================
-   AFC / NFC PLAYER OF SERIES
-   ========================================== */
+/* ===================================== */
+/* PLAYER OF THE SERIES */
+/* ===================================== */
 
 .series-card {
   position: relative;
 
+  width: 100%;
   min-height: 196px;
 
   margin-bottom: 14px;
 
-  padding: 21px 17px;
+  padding: 20px 18px;
 
   display: grid;
 
   grid-template-columns:
-    78px
+    102px
     minmax(0, 1fr)
-    auto;
+    64px;
 
   align-items: center;
 
-  gap: 13px;
+  gap: 12px;
 
   overflow: hidden;
 
@@ -434,83 +436,122 @@ body.dark-mode {
 
   color: #fff;
 
+  isolation: isolate;
+
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12);
+    inset 0 1px 0 rgba(255,255,255,.13),
+    0 4px 15px rgba(0,0,0,.04);
 }
 
 
-/* AFC RED CARD */
+/* SUBTLE LIGHT EFFECT */
+
+.series-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 52% 48%,
+      rgba(255,255,255,.12) 0%,
+      rgba(255,255,255,.04) 28%,
+      transparent 60%
+    );
+}
+
+
+/* AFC BACKGROUND */
 
 .afc-series {
   background:
     radial-gradient(
-      circle at 70% 18%,
-      rgba(255,255,255,.12),
-      transparent 31%
+      circle at 55% 48%,
+      #ed2142 0%,
+      #d71131 39%,
+      transparent 68%
     ),
     linear-gradient(
-      115deg,
-      #9f071b 0%,
-      #d81632 48%,
-      #e31c3a 68%,
-      #a7071e 100%
+      110deg,
+      #9f061c 0%,
+      #c50b27 34%,
+      #df1233 62%,
+      #a40620 100%
     );
 }
 
 
-/* NFC BLUE CARD */
+/* NFC BACKGROUND */
 
 .nfc-series {
   background:
     radial-gradient(
-      circle at 70% 18%,
-      rgba(255,255,255,.14),
-      transparent 31%
+      circle at 55% 48%,
+      #2c79dc 0%,
+      #1b5bb8 40%,
+      transparent 68%
     ),
     linear-gradient(
-      115deg,
-      #10346e 0%,
-      #1c5db7 48%,
-      #286fce 68%,
-      #0b2b61 100%
+      110deg,
+      #123d7d 0%,
+      #1553a6 35%,
+      #2167c7 63%,
+      #0c2f68 100%
     );
 }
 
 
-/* REAL AFC + NFC IMAGE */
+/* CONFERENCE LOGO AREA */
 
 .conference-side {
-  width: 78px;
+  width: 102px;
+  height: 145px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
+  overflow: visible;
 }
+
+
+/* BIG AFC + NFC LOGOS */
 
 .conference-image {
   display: block;
 
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
+
+  max-width: none;
 
   object-fit: contain;
 
   flex-shrink: 0;
 
-  /*
-    This helps the supplied logos blend
-    into the colored conference card.
-  */
-  mix-blend-mode: screen;
+  transform: scale(1.08);
+
+  filter:
+    drop-shadow(
+      0 2px 2px rgba(0,0,0,.08)
+    );
 }
 
 
-/* PLAYER CONTENT */
+/* PLAYER CENTER */
 
 .series-center {
   min-width: 0;
+
+  position: relative;
+
+  z-index: 2;
 }
 
 .series-player-row {
@@ -521,7 +562,7 @@ body.dark-mode {
 }
 
 
-/* CIRCLE WITH TEAM LOGO */
+/* TEAM LOGO CIRCLE */
 
 .series-team-circle {
   width: 47px;
@@ -536,15 +577,15 @@ body.dark-mode {
 
   border-radius: 50%;
 
-  background: rgba(255,255,255,.96);
+  background: #fff;
 
-  color: #1f2028;
+  color: #222;
 
   font-size: 9px;
   font-weight: 900;
 
   box-shadow:
-    0 0 0 2px rgba(255,255,255,.18);
+    0 0 0 2px rgba(255,255,255,.22);
 }
 
 .series-team-circle img {
@@ -557,7 +598,7 @@ body.dark-mode {
 }
 
 
-/* ROBLOX USERNAME */
+/* USERNAME */
 
 .series-player-copy {
   min-width: 0;
@@ -584,13 +625,6 @@ body.dark-mode {
   text-decoration: none;
 }
 
-.series-player-name:active {
-  opacity: .72;
-}
-
-
-/* TEAM + GP */
-
 .series-player-team {
   margin-top: 5px;
 
@@ -600,7 +634,7 @@ body.dark-mode {
 
   white-space: nowrap;
 
-  color: rgba(255,255,255,.85);
+  color: rgba(255,255,255,.87);
 
   font-size: 12px;
   font-weight: 700;
@@ -612,15 +646,11 @@ body.dark-mode {
 .series-main-stats {
   margin-top: 14px;
 
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-
   color: #fff;
 
   font-size: 12px;
+  line-height: 1.4;
+
   font-weight: 800;
 }
 
@@ -630,11 +660,8 @@ body.dark-mode {
 
   margin: 11px 0 8px;
 
-  background: rgba(255,255,255,.30);
+  background: rgba(255,255,255,.34);
 }
-
-
-/* 2ND AND 3RD */
 
 .series-runners {
   color: rgba(255,255,255,.95);
@@ -651,31 +678,37 @@ body.dark-mode {
 .series-score {
   align-self: start;
 
-  padding-top: 4px;
+  padding-top: 17px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 
-  flex-shrink: 0;
+  position: relative;
+
+  z-index: 2;
 }
 
 .series-score strong {
-  font-size: 29px;
-  line-height: 1;
+  color: #fff;
 
-  font-weight: 950;
+  font-size: 35px;
+  line-height: .8;
+
+  font-weight: 900;
 
   letter-spacing: -1px;
 }
 
 .series-score span {
-  margin-top: 6px;
+  margin-top: 13px;
 
-  font-size: 9px;
+  color: #fff;
+
+  font-size: 10px;
   font-weight: 900;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
 
@@ -1120,7 +1153,8 @@ select,
 
   display: grid;
 
-  grid-template-columns: repeat(5, minmax(0,1fr));
+  grid-template-columns:
+    repeat(5, minmax(0,1fr));
 
   align-items: center;
 
@@ -1132,7 +1166,8 @@ select,
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
 
-  box-shadow: 0 8px 35px rgba(0,0,0,.18);
+  box-shadow:
+    0 8px 35px rgba(0,0,0,.18);
 }
 
 .nav-item {
@@ -1172,11 +1207,14 @@ select,
 
   color: var(--red);
 
-  box-shadow: 0 1px 12px rgba(0,0,0,.10);
+  box-shadow:
+    0 1px 12px rgba(0,0,0,.10);
 }
 
 
-/* MOBILE LIKE AFL */
+/* ===================================== */
+/* PHONE */
+/* ===================================== */
 
 @media (max-width: 430px) {
 
@@ -1188,31 +1226,49 @@ select,
     padding: 18px;
   }
 
-  .series-card {
-    min-height: 183px;
 
-    padding: 18px 14px;
+  /* BIGGER AFL STYLE CARDS */
+
+  .series-card {
+    min-height: 196px;
+
+    padding:
+      18px
+      14px
+      18px
+      10px;
 
     grid-template-columns:
-      65px
+      105px
       minmax(0,1fr)
-      auto;
+      55px;
 
-    gap: 9px;
+    gap: 8px;
+
+    border-radius: 18px;
   }
 
+
+  /* BIG CONFERENCE LOGO */
+
   .conference-side {
-    width: 65px;
+    width: 105px;
+    height: 155px;
   }
 
   .conference-image {
-    width: 62px;
-    height: 62px;
+    width: 105px;
+    height: 105px;
+
+    transform: scale(1.12);
   }
 
+
+  /* PLAYER */
+
   .series-team-circle {
-    width: 41px;
-    height: 41px;
+    width: 42px;
+    height: 42px;
   }
 
   .series-player-row {
@@ -1228,20 +1284,33 @@ select,
   }
 
   .series-main-stats {
+    margin-top: 13px;
+
     font-size: 10px;
+    line-height: 1.4;
   }
 
   .series-runners {
     font-size: 10px;
   }
 
+
+  /* POINTS */
+
+  .series-score {
+    padding-top: 16px;
+  }
+
   .series-score strong {
-    font-size: 23px;
+    font-size: 29px;
   }
 
   .series-score span {
+    margin-top: 10px;
+
     font-size: 8px;
   }
+
 
   .panel-heading h2 {
     font-size: 21px;
@@ -1258,7 +1327,8 @@ select,
 @media (min-width: 700px) {
 
   .feature-list {
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
   }
 
   .panel {
@@ -1266,12 +1336,21 @@ select,
   }
 
   .series-card {
-    min-height: 210px;
+    min-height: 215px;
+
+    grid-template-columns:
+      120px
+      minmax(0,1fr)
+      80px;
+  }
+
+  .conference-side {
+    width: 120px;
   }
 
   .conference-image {
-    width: 82px;
-    height: 82px;
+    width: 115px;
+    height: 115px;
   }
 
   .series-player-name {
@@ -1279,6 +1358,6 @@ select,
   }
 
   .series-score strong {
-    font-size: 34px;
+    font-size: 36px;
   }
 }
