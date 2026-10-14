@@ -2,13 +2,12 @@
   --bg: #ffffff;
   --card: #ffffff;
   --soft: #f7f7f8;
-  --text: #1c1d24;
-  --muted: #8a8b91;
-  --line: #dedfe2;
-  --red: #db3343;
-  --red-soft: #f8dfe3;
+  --text: #202127;
+  --muted: #898a90;
+  --line: #dedfe3;
+  --red: #d72b3d;
   --gold: #a9852e;
-  --shadow: 0 8px 30px rgba(0,0,0,.10);
+  --shadow: 0 8px 30px rgba(0, 0, 0, .10);
 }
 
 * {
@@ -59,7 +58,9 @@ body.dark-mode {
 }
 
 
-/* HEADER */
+/* ============================= */
+/* TOP HEADER */
+/* ============================= */
 
 .site-header {
   position: fixed;
@@ -127,9 +128,9 @@ body.dark-mode {
 
   padding: 0;
 
-  border: 0;
-
   position: relative;
+
+  border: 0;
 
   background: transparent;
   color: var(--text);
@@ -149,10 +150,10 @@ body.dark-mode {
   width: 20px;
   height: 20px;
 
-  border-radius: 50%;
-
   display: grid;
   place-items: center;
+
+  border-radius: 50%;
 
   background: var(--red);
   color: #fff;
@@ -189,7 +190,9 @@ body.dark-mode {
 }
 
 
+/* ============================= */
 /* MAIN */
+/* ============================= */
 
 .main-content {
   width: min(calc(100% - 26px), 830px);
@@ -201,7 +204,9 @@ body.dark-mode {
 }
 
 
+/* ============================= */
 /* PANELS */
+/* ============================= */
 
 .panel {
   margin-bottom: 30px;
@@ -224,7 +229,9 @@ body.dark-mode {
 }
 
 
-/* AROUND LEAGUE */
+/* ============================= */
+/* AROUND THE LEAGUE */
+/* ============================= */
 
 .feature-list {
   display: grid;
@@ -251,7 +258,7 @@ body.dark-mode {
   background:
     radial-gradient(
       circle at 85% 50%,
-      rgba(120,80,180,.25),
+      rgba(120, 80, 180, .25),
       transparent 35%
     ),
     linear-gradient(
@@ -266,7 +273,7 @@ body.dark-mode {
   background:
     radial-gradient(
       circle at 85% 50%,
-      rgba(255,150,120,.20),
+      rgba(255, 150, 120, .20),
       transparent 35%
     ),
     linear-gradient(
@@ -320,6 +327,7 @@ body.dark-mode {
 
   display: flex;
   align-items: center;
+
   gap: 13px;
 
   border-bottom: 1px solid var(--line);
@@ -350,6 +358,7 @@ body.dark-mode {
   flex: 1;
 
   display: grid;
+
   gap: 4px;
 }
 
@@ -370,7 +379,9 @@ body.dark-mode {
 }
 
 
+/* ============================= */
 /* SECTION HEADINGS */
+/* ============================= */
 
 .player-section,
 .clips-section {
@@ -405,30 +416,30 @@ body.dark-mode {
 }
 
 
-/* ===================================== */
-/* PLAYER OF THE SERIES */
-/* ===================================== */
+/* ================================================= */
+/* PLAYER OF THE SERIES — AFL STYLE */
+/* ================================================= */
 
 .series-card {
   position: relative;
 
   width: 100%;
-  min-height: 196px;
+  min-height: 180px;
 
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 
-  padding: 20px 18px;
+  padding: 18px 18px;
 
   display: grid;
 
   grid-template-columns:
-    102px
+    82px
     minmax(0, 1fr)
-    64px;
+    67px;
+
+  gap: 13px;
 
   align-items: center;
-
-  gap: 12px;
 
   overflow: hidden;
 
@@ -437,16 +448,12 @@ body.dark-mode {
   color: #fff;
 
   isolation: isolate;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.13),
-    0 4px 15px rgba(0,0,0,.04);
 }
 
 
-/* SUBTLE LIGHT EFFECT */
+/* SOFT LIGHT ACROSS CARD */
 
-.series-card::before {
+.series-card::after {
   content: "";
 
   position: absolute;
@@ -459,92 +466,94 @@ body.dark-mode {
 
   background:
     radial-gradient(
-      ellipse at 52% 48%,
-      rgba(255,255,255,.12) 0%,
-      rgba(255,255,255,.04) 28%,
-      transparent 60%
+      ellipse at 53% 48%,
+      rgba(255, 255, 255, .10) 0%,
+      rgba(255, 255, 255, .03) 35%,
+      transparent 70%
     );
 }
 
 
-/* AFC BACKGROUND */
+/* AFC CARD */
 
 .afc-series {
   background:
-    radial-gradient(
-      circle at 55% 48%,
-      #ed2142 0%,
-      #d71131 39%,
-      transparent 68%
-    ),
     linear-gradient(
       110deg,
-      #9f061c 0%,
-      #c50b27 34%,
-      #df1233 62%,
-      #a40620 100%
+      #b10b23 0%,
+      #d61432 32%,
+      #ec1f40 57%,
+      #cf102d 78%,
+      #a80820 100%
     );
 }
 
 
-/* NFC BACKGROUND */
+/* NFC CARD */
 
 .nfc-series {
   background:
-    radial-gradient(
-      circle at 55% 48%,
-      #2c79dc 0%,
-      #1b5bb8 40%,
-      transparent 68%
-    ),
     linear-gradient(
       110deg,
-      #123d7d 0%,
-      #1553a6 35%,
-      #2167c7 63%,
-      #0c2f68 100%
+      #174887 0%,
+      #1d5fb5 32%,
+      #2a76d6 57%,
+      #1d5eb5 78%,
+      #103a76 100%
     );
 }
 
 
-/* CONFERENCE LOGO AREA */
+/* ============================= */
+/* AFC + NFC LOGO */
+/* ============================= */
 
 .conference-side {
-  width: 102px;
-  height: 145px;
+  width: 82px;
+  height: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  overflow: visible;
+  overflow: hidden;
 }
-
-
-/* BIG AFC + NFC LOGOS */
 
 .conference-image {
   display: block;
 
-  width: 100px;
-  height: 100px;
-
-  max-width: none;
+  width: 72px;
+  height: 72px;
 
   object-fit: contain;
 
   flex-shrink: 0;
-
-  transform: scale(1.08);
-
-  filter:
-    drop-shadow(
-      0 2px 2px rgba(0,0,0,.08)
-    );
 }
 
 
-/* PLAYER CENTER */
+/*
+  Your AFC image currently has black baked into
+  the image. Screen blending helps hide black.
+*/
+
+.afc-series .conference-image {
+  mix-blend-mode: screen;
+}
+
+
+/*
+  NFC image has a lighter background.
+  Multiply helps remove much of the white.
+*/
+
+.nfc-series .conference-image {
+  mix-blend-mode: screen;
+}
+
+
+/* ============================= */
+/* CENTER PLAYER INFO */
+/* ============================= */
 
 .series-center {
   min-width: 0;
@@ -558,15 +567,15 @@ body.dark-mode {
   display: flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 9px;
 }
 
 
-/* TEAM LOGO CIRCLE */
+/* TEAM LOGO */
 
 .series-team-circle {
-  width: 47px;
-  height: 47px;
+  width: 42px;
+  height: 42px;
 
   flex-shrink: 0;
 
@@ -581,18 +590,18 @@ body.dark-mode {
 
   color: #222;
 
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 900;
 
   box-shadow:
-    0 0 0 2px rgba(255,255,255,.22);
+    0 0 0 2px rgba(255, 255, 255, .16);
 }
 
 .series-team-circle img {
   width: 100%;
   height: 100%;
 
-  padding: 4px;
+  padding: 3px;
 
   object-fit: contain;
 }
@@ -617,12 +626,10 @@ body.dark-mode {
 
   color: #fff;
 
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.1;
 
   font-weight: 900;
-
-  text-decoration: none;
 }
 
 .series-player-team {
@@ -634,25 +641,28 @@ body.dark-mode {
 
   white-space: nowrap;
 
-  color: rgba(255,255,255,.87);
+  color: rgba(255, 255, 255, .93);
 
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 
-/* STATS */
+/* PLAYER STATS */
 
 .series-main-stats {
-  margin-top: 14px;
+  margin-top: 13px;
 
   color: #fff;
 
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.35;
 
   font-weight: 800;
 }
+
+
+/* DIVIDER */
 
 .series-divider {
   width: 100%;
@@ -660,29 +670,34 @@ body.dark-mode {
 
   margin: 11px 0 8px;
 
-  background: rgba(255,255,255,.34);
+  background: rgba(255, 255, 255, .30);
 }
 
+
+/* RUNNER UPS */
+
 .series-runners {
-  color: rgba(255,255,255,.95);
+  color: rgba(255, 255, 255, .96);
 
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.65;
 
   font-weight: 700;
 }
 
 
-/* POINTS */
+/* ============================= */
+/* POINT TOTAL */
+/* ============================= */
 
 .series-score {
   align-self: start;
 
-  padding-top: 17px;
+  padding-top: 13px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 
   position: relative;
 
@@ -692,27 +707,31 @@ body.dark-mode {
 .series-score strong {
   color: #fff;
 
-  font-size: 35px;
-  line-height: .8;
+  font-size: 30px;
+  line-height: 1;
 
   font-weight: 900;
 
   letter-spacing: -1px;
+
+  white-space: nowrap;
 }
 
 .series-score span {
-  margin-top: 13px;
+  margin-top: 5px;
 
-  color: #fff;
+  color: rgba(255, 255, 255, .95);
 
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 
+/* ============================= */
 /* LATEST CLIPS */
+/* ============================= */
 
 .clips-track {
   display: flex;
@@ -772,7 +791,9 @@ body.dark-mode {
 }
 
 
+/* ============================= */
 /* PANEL HEADINGS */
+/* ============================= */
 
 .panel-heading {
   display: flex;
@@ -804,7 +825,7 @@ body.dark-mode {
 
   border-radius: 30px;
 
-  background: var(--red-soft);
+  background: #f8dfe3;
 
   color: var(--red);
 
@@ -858,7 +879,9 @@ select,
 }
 
 
+/* ============================= */
 /* AWARD WATCH */
+/* ============================= */
 
 .award-heading {
   display: flex;
@@ -868,496 +891,4 @@ select,
 }
 
 .award-heading h2 {
-  color: var(--gold);
-}
-
-.award-heading span {
-  padding: 7px 10px;
-
-  border-radius: 30px;
-
-  background: #f6efdc;
-
-  color: #9c7b2b;
-
-  font-size: 10px;
-  font-weight: 900;
-}
-
-.award-controls {
-  margin-top: 18px;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 10px;
-}
-
-.award-controls select {
-  flex: 1 1 220px;
-}
-
-.award-divider {
-  height: 3px;
-
-  margin: 16px 0 10px;
-
-  background: #cba543;
-}
-
-.award-row {
-  min-height: 65px;
-
-  padding: 12px 4px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 11px;
-
-  border-bottom: 1px solid var(--line);
-}
-
-.award-rank {
-  color: var(--gold);
-
-  font-weight: 900;
-}
-
-.award-player {
-  flex: 1;
-
-  font-weight: 800;
-}
-
-.award-score {
-  color: var(--gold);
-
-  font-size: 18px;
-  font-weight: 950;
-}
-
-
-/* MATCHUPS */
-
-.matchup-list {
-  display: grid;
-
-  gap: 9px;
-}
-
-.matchup-row {
-  min-height: 73px;
-
-  padding: 13px 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 7px;
-
-  border: 1px solid var(--line);
-  border-radius: 12px;
-
-  background: var(--soft);
-}
-
-.matchup-team {
-  flex: 1;
-
-  min-width: 0;
-
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-}
-
-.matchup-team:last-child {
-  flex-direction: row-reverse;
-
-  text-align: right;
-}
-
-.matchup-logo,
-.team-logo,
-.leader-logo,
-.standing-logo,
-.award-logo {
-  width: 38px;
-  height: 36px;
-
-  flex-shrink: 0;
-
-  object-fit: contain;
-
-  border-radius: 4px;
-}
-
-.matchup-name {
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-
-  font-size: 11px;
-  font-weight: 850;
-}
-
-.matchup-score {
-  flex-shrink: 0;
-
-  white-space: nowrap;
-
-  font-size: 20px;
-  font-weight: 950;
-}
-
-.matchup-score span {
-  padding: 0 3px;
-
-  color: #aaa;
-
-  font-weight: 400;
-}
-
-
-/* STAT LEADERS */
-
-.leader-row {
-  min-height: 65px;
-
-  padding: 12px 3px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  border-bottom: 1px solid var(--line);
-}
-
-.leader-rank {
-  min-width: 17px;
-
-  color: var(--red);
-
-  font-weight: 900;
-}
-
-.leader-name {
-  flex: 1;
-
-  min-width: 0;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.leader-value {
-  font-size: 19px;
-  font-weight: 950;
-}
-
-
-/* STANDINGS */
-
-.standing-heading {
-  margin: 19px 0 8px;
-
-  color: #aaa;
-
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.standing-row {
-  min-height: 53px;
-
-  padding: 7px 2px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 11px;
-}
-
-.standing-rank {
-  min-width: 18px;
-
-  color: var(--red);
-
-  font-weight: 900;
-}
-
-.standing-name {
-  flex: 1;
-
-  min-width: 0;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-
-  font-size: 12px;
-  font-weight: 850;
-}
-
-.standing-record {
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.view-all-link {
-  display: block;
-
-  padding-top: 18px;
-
-  text-align: center;
-
-  color: var(--red);
-
-  font-size: 11px;
-  font-weight: 900;
-}
-
-
-/* BOTTOM NAV */
-
-.bottom-nav {
-  position: fixed;
-
-  z-index: 1100;
-
-  left: 50%;
-
-  bottom: max(17px, env(safe-area-inset-bottom));
-
-  transform: translateX(-50%);
-
-  width: min(calc(100% - 32px), 440px);
-
-  height: 68px;
-
-  padding: 5px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, minmax(0,1fr));
-
-  align-items: center;
-
-  border: 1px solid #e5e6e9;
-  border-radius: 50px;
-
-  background: rgba(255,255,255,.96);
-
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-
-  box-shadow:
-    0 8px 35px rgba(0,0,0,.18);
-}
-
-.nav-item {
-  height: 58px;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 3px;
-
-  border-radius: 40px;
-
-  color: #4c4e5d;
-
-  font-size: 9px;
-  font-weight: 850;
-}
-
-.nav-item svg {
-  width: 23px;
-  height: 23px;
-
-  fill: none;
-
-  stroke: currentColor;
-  stroke-width: 2;
-
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-
-.nav-item.active {
-  background: #fff;
-
-  color: var(--red);
-
-  box-shadow:
-    0 1px 12px rgba(0,0,0,.10);
-}
-
-
-/* ===================================== */
-/* PHONE */
-/* ===================================== */
-
-@media (max-width: 430px) {
-
-  .main-content {
-    width: calc(100% - 24px);
-  }
-
-  .panel {
-    padding: 18px;
-  }
-
-
-  /* BIGGER AFL STYLE CARDS */
-
-  .series-card {
-    min-height: 196px;
-
-    padding:
-      18px
-      14px
-      18px
-      10px;
-
-    grid-template-columns:
-      105px
-      minmax(0,1fr)
-      55px;
-
-    gap: 8px;
-
-    border-radius: 18px;
-  }
-
-
-  /* BIG CONFERENCE LOGO */
-
-  .conference-side {
-    width: 105px;
-    height: 155px;
-  }
-
-  .conference-image {
-    width: 105px;
-    height: 105px;
-
-    transform: scale(1.12);
-  }
-
-
-  /* PLAYER */
-
-  .series-team-circle {
-    width: 42px;
-    height: 42px;
-  }
-
-  .series-player-row {
-    gap: 8px;
-  }
-
-  .series-player-name {
-    font-size: 15px;
-  }
-
-  .series-player-team {
-    font-size: 10px;
-  }
-
-  .series-main-stats {
-    margin-top: 13px;
-
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  .series-runners {
-    font-size: 10px;
-  }
-
-
-  /* POINTS */
-
-  .series-score {
-    padding-top: 16px;
-  }
-
-  .series-score strong {
-    font-size: 29px;
-  }
-
-  .series-score span {
-    margin-top: 10px;
-
-    font-size: 8px;
-  }
-
-
-  .panel-heading h2 {
-    font-size: 21px;
-  }
-
-  .bottom-nav {
-    width: calc(100% - 24px);
-  }
-}
-
-
-/* DESKTOP */
-
-@media (min-width: 700px) {
-
-  .feature-list {
-    grid-template-columns:
-      repeat(2, minmax(0,1fr));
-  }
-
-  .panel {
-    padding: 30px;
-  }
-
-  .series-card {
-    min-height: 215px;
-
-    grid-template-columns:
-      120px
-      minmax(0,1fr)
-      80px;
-  }
-
-  .conference-side {
-    width: 120px;
-  }
-
-  .conference-image {
-    width: 115px;
-    height: 115px;
-  }
-
-  .series-player-name {
-    font-size: 21px;
-  }
-
-  .series-score strong {
-    font-size: 36px;
-  }
-}
+  color: var(--gold
