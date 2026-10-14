@@ -37,7 +37,7 @@
 
 <body>
 
-  <!-- SVG ICONS -->
+  <!-- ICON LIBRARY -->
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg">
 
     <symbol id="i-home" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@
   </svg>
 
 
-  <!-- TOP FLOATING CONTROLS -->
+  <!-- TOP -->
   <header class="site-header">
 
     <button
@@ -74,7 +74,6 @@
       class="theme-button"
       aria-label="Toggle dark mode"
     >
-
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -83,7 +82,6 @@
       >
         <path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z"/>
       </svg>
-
     </button>
 
 
@@ -92,9 +90,7 @@
       <button
         id="notificationButton"
         class="notification-button"
-        aria-label="Notifications"
       >
-
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -110,16 +106,13 @@
         >
           1
         </span>
-
       </button>
 
 
       <button
         id="discordLogin"
         class="profile-button"
-        aria-label="Discord profile"
       >
-
         <img
           id="discordAvatar"
           alt="Discord profile"
@@ -129,13 +122,11 @@
         <span id="avatarFallback">
           U
         </span>
-
       </button>
 
     </div>
 
   </header>
-
 
 
   <main class="main-content">
@@ -155,7 +146,6 @@
           class="feature-card feature-purple"
           href="standings.html"
         >
-
           <span class="feature-kicker">
             UFL SEASON 2
           </span>
@@ -171,7 +161,6 @@
           <strong>
             View standings →
           </strong>
-
         </a>
 
 
@@ -179,7 +168,6 @@
           class="feature-card feature-red"
           href="scores.html"
         >
-
           <span class="feature-kicker">
             UFL GAME DAY
           </span>
@@ -195,7 +183,6 @@
           <strong>
             View scores →
           </strong>
-
         </a>
 
       </div>
@@ -203,65 +190,40 @@
 
       <div class="quick-links">
 
-        <a
-          href="rankings.html"
-          class="quick-link"
-        >
+        <a href="rankings.html" class="quick-link">
 
           <span class="quick-icon">
             1
           </span>
 
           <span class="quick-copy">
-
-            <strong>
-              UFL Power Rankings
-            </strong>
-
-            <small>
-              See who's on top this season.
-            </small>
-
+            <strong>UFL Power Rankings</strong>
+            <small>See who's on top this season.</small>
           </span>
 
-          <span class="quick-arrow">
-            →
-          </span>
+          <span class="quick-arrow">→</span>
 
         </a>
 
 
-        <a
-          href="scores.html"
-          class="quick-link"
-        >
+        <a href="scores.html" class="quick-link">
 
           <span class="quick-icon">
             2
           </span>
 
           <span class="quick-copy">
-
-            <strong>
-              Latest Game Results
-            </strong>
-
-            <small>
-              Scores from around the league.
-            </small>
-
+            <strong>Latest Game Results</strong>
+            <small>Scores from around the league.</small>
           </span>
 
-          <span class="quick-arrow">
-            →
-          </span>
+          <span class="quick-arrow">→</span>
 
         </a>
 
       </div>
 
     </section>
-
 
 
     <!-- PLAYER OF THE SERIES -->
@@ -280,26 +242,20 @@
       </div>
 
 
-
-      <!-- AFC CARD -->
+      <!-- AFC -->
       <article
         class="series-card afc-series"
         id="afcSeriesCard"
       >
 
+        <!-- REAL AFC LOGO -->
         <div class="conference-side">
 
-          <div class="conference-emblem conference-emblem-afc">
-
-            <span class="conference-letter">
-              A
-            </span>
-
-            <span class="conference-stars">
-              ★★★
-            </span>
-
-          </div>
+          <img
+            src="assets/afc.png.PNG"
+            class="conference-image"
+            alt="AFC"
+          >
 
         </div>
 
@@ -308,6 +264,7 @@
 
           <div class="series-player-row">
 
+            <!-- TEAM LOGO -->
             <div
               class="series-team-circle"
               id="afcLeaderTeamLogo"
@@ -318,6 +275,7 @@
 
             <div class="series-player-copy">
 
+              <!-- ROBLOX USERNAME -->
               <a
                 id="afcSeriesPlayer"
                 class="series-player-name"
@@ -327,6 +285,7 @@
               </a>
 
 
+              <!-- TEAM + GP -->
               <div
                 id="afcSeriesTeam"
                 class="series-player-team"
@@ -339,6 +298,7 @@
           </div>
 
 
+          <!-- MAIN STATS -->
           <div
             id="afcSeriesStats"
             class="series-main-stats"
@@ -350,6 +310,7 @@
           <div class="series-divider"></div>
 
 
+          <!-- #2 AND #3 -->
           <div
             id="afcSeriesRunners"
             class="series-runners"
@@ -360,6 +321,7 @@
         </div>
 
 
+        <!-- POINTS -->
         <div class="series-score">
 
           <strong id="afcSeriesPoints">
@@ -375,26 +337,20 @@
       </article>
 
 
-
-      <!-- NFC CARD -->
+      <!-- NFC -->
       <article
         class="series-card nfc-series"
         id="nfcSeriesCard"
       >
 
+        <!-- REAL NFC LOGO -->
         <div class="conference-side">
 
-          <div class="conference-emblem conference-emblem-nfc">
-
-            <span class="conference-letter">
-              N
-            </span>
-
-            <span class="conference-stars">
-              ★★★★
-            </span>
-
-          </div>
+          <img
+            src="assets/nfc.png.PNG"
+            class="conference-image"
+            alt="NFC"
+          >
 
         </div>
 
@@ -403,6 +359,7 @@
 
           <div class="series-player-row">
 
+            <!-- TEAM LOGO -->
             <div
               class="series-team-circle"
               id="nfcLeaderTeamLogo"
@@ -413,6 +370,7 @@
 
             <div class="series-player-copy">
 
+              <!-- ROBLOX USERNAME -->
               <a
                 id="nfcSeriesPlayer"
                 class="series-player-name"
@@ -422,6 +380,7 @@
               </a>
 
 
+              <!-- TEAM + GP -->
               <div
                 id="nfcSeriesTeam"
                 class="series-player-team"
@@ -434,6 +393,7 @@
           </div>
 
 
+          <!-- MAIN STATS -->
           <div
             id="nfcSeriesStats"
             class="series-main-stats"
@@ -445,6 +405,7 @@
           <div class="series-divider"></div>
 
 
+          <!-- #2 AND #3 -->
           <div
             id="nfcSeriesRunners"
             class="series-runners"
@@ -455,6 +416,7 @@
         </div>
 
 
+        <!-- POINTS -->
         <div class="series-score">
 
           <strong id="nfcSeriesPoints">
@@ -470,7 +432,6 @@
       </article>
 
     </section>
-
 
 
     <!-- LATEST CLIPS -->
@@ -510,7 +471,6 @@
       </div>
 
     </section>
-
 
 
     <!-- AWARD WATCH -->
@@ -568,7 +528,6 @@
 
       <div class="award-divider"></div>
 
-
       <div
         id="awardList"
         class="award-list"
@@ -577,7 +536,6 @@
       </div>
 
     </section>
-
 
 
     <!-- MATCHUPS -->
@@ -632,7 +590,6 @@
       </div>
 
     </section>
-
 
 
     <!-- STAT LEADERS -->
@@ -709,7 +666,6 @@
     </section>
 
 
-
     <!-- STANDINGS -->
     <section class="panel standings-panel">
 
@@ -758,7 +714,6 @@
   </main>
 
 
-
   <!-- BOTTOM NAV -->
   <nav class="bottom-nav">
 
@@ -766,15 +721,11 @@
       href="index.html"
       class="nav-item active"
     >
-
       <svg>
         <use href="#i-home"/>
       </svg>
 
-      <span>
-        Home
-      </span>
-
+      <span>Home</span>
     </a>
 
 
@@ -782,15 +733,11 @@
       href="standings.html"
       class="nav-item"
     >
-
       <svg>
         <use href="#i-trophy"/>
       </svg>
 
-      <span>
-        Standings
-      </span>
-
+      <span>Standings</span>
     </a>
 
 
@@ -798,15 +745,11 @@
       href="scores.html"
       class="nav-item"
     >
-
       <svg>
         <use href="#i-scores"/>
       </svg>
 
-      <span>
-        Scores
-      </span>
-
+      <span>Scores</span>
     </a>
 
 
@@ -814,15 +757,11 @@
       href="stats.html"
       class="nav-item"
     >
-
       <svg>
         <use href="#i-stats"/>
       </svg>
 
-      <span>
-        Stats
-      </span>
-
+      <span>Stats</span>
     </a>
 
 
@@ -830,19 +769,14 @@
       href="more.html"
       class="nav-item"
     >
-
       <svg>
         <use href="#i-more"/>
       </svg>
 
-      <span>
-        More
-      </span>
-
+      <span>More</span>
     </a>
 
   </nav>
-
 
 </body>
 </html>
